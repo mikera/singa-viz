@@ -1,6 +1,7 @@
 (ns mikera.singaviz.main
   (:use [clojure.core.matrix])
   (:use [mikera.cljutils.error])
+  (:require [mikera.cljutils.text :as text])
   (:require [clojure.edn :as edn])
   (:require [mikera.image.core :as img])
   (:require [mikera.image.colours :as col])
@@ -78,6 +79,9 @@
     (let [bi (img/zoom 8.0 (city-image (data i)))
           g (.getGraphics bi)]
       (.drawImage g outline (int 0) (int 0) nil)
+      (.drawString g (str (text/pad-left (str (quot i 4)) 2 \0) ":"
+                          (text/pad-left (str (* 15 (mod i 4))) 2 \0)) 
+        (int 5) (int 20))
       bi)))
 
 (def running (atom true))
@@ -88,4 +92,4 @@
     (dotimes [i PERIODS] 
       (when @running
         (show (frame i) :title "Mobile Activity in Singapore" :on-close #(reset! running false))
-        (Thread/sleep 50))))) 
+        (Thread/sleep 40))))) 
