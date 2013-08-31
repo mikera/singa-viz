@@ -46,7 +46,17 @@
 			<artifactId>mikera-gui</artifactId>
 			<version>0.1.0</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>core.matrix</artifactId>
+			<version>0.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>vectorz-clj</artifactId>
+			<version>0.14.0</version>
+		</dependency>
+		</dependencies>
 
 	<scm>
 		<connection>scm:git:git@github.com:mikera/${project.artifactId}.git</connection>
