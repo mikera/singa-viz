@@ -56,6 +56,11 @@
 			<artifactId>vectorz-clj</artifactId>
 			<version>0.14.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.mikera</groupId>
+			<artifactId>imagez</artifactId>
+			<version>0.0.3</version>
+		</dependency>
 		</dependencies>
 
 	<scm>
